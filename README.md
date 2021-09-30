@@ -24,5 +24,7 @@ WHEN the password is generated<br />
 THEN the password is either displayed in an alert or written to the page<br />
 
 ## Links
-github:
-live page:
+github: https://github.com/viakeegan/challenge-3-javascript
+live page: https://viakeegan.github.io/challenge-3-javascript/
+
+
