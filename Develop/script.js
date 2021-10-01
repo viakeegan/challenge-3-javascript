@@ -16,7 +16,17 @@ var generatePassword = function() {
     }
   };
 
-  
+  var finalLength = localStorage.getItem("Password length");
+
+  var fullPassword = function() {
+    var result = "";
+
+    var lowercaseConfirm = localStorage.getItem("lowercase letters")
+    if (lowercaseConfirm === "true") {
+      var lowercase = "abcdefghijklmnopqrstuvwxyz";
+    } else {
+      var lowercase = "";
+    }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
