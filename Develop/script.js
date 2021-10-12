@@ -7,7 +7,7 @@ var generatePassword = function() {
   }
   localStorage.setItem("Password length", passwordLength);
 
-  var criteria = ["lowercase letters","uppercase letters", "numbers", "special  characters"]\
+  var criteria = ["lowercase letters","uppercase letters", "numbers", "special  characters"]
 
   for(var i = 0; i < criteria.length; i++) {
     var answer = confirm(`Would you like to include ${criteria[i]} in your password?`);
@@ -27,6 +27,42 @@ var generatePassword = function() {
     } else {
       var lowercase = "";
     }
+
+    var uppercaseConfirm = localStorage.getItem("uppercase letters")
+    if (uppercaseConfirm === "true") {
+      var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    } else {
+      var uppercase = "";
+    }
+    
+  var numbersConfirm = localStorage.getItem("numbers")
+  if (numbersConfirm === "true") {
+    var numbers = "123456789";
+  } else {
+    var numbers = "";
+  }
+
+  var specialCharsConfirm = localStorage.getItem("special characters")
+  if (specialCharsConfirm === "true") {
+    var specialChars = "!@#$%&*";
+  } else {
+    var specialChars = "";
+  };
+
+  var list = (lowercase + uppercase + numbers + specialChars);
+  if (list === "") {
+    alert("Please select at least one criteriaa for the password.")
+    return generatePassword();
+  }
+  console.log(list);
+
+  for ( var i = 0; i < finalLength; i++) {
+    result += list.charAt(Math.floor(Math.random() * list.length));
+  }
+  return result;
+  }
+  return fullPassword();
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
