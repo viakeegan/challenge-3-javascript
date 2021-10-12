@@ -1,4 +1,4 @@
-// Assignment code here
+// Assignment code here //
 var generatePassword = function() {
   var passwordLength = prompt("How long would you like your password to be?");
   if (passwordLength < 8 || passwordLength > 128 || passwordLength === null) {
@@ -64,7 +64,7 @@ var generatePassword = function() {
   return fullPassword();
 };
 
-// Get references to the #generate element
+// Get references to the #generate element // 
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -76,5 +76,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// Add event listener to generate button // 
 generateBtn.addEventListener("click", writePassword);
